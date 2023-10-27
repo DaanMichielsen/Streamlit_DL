@@ -19,7 +19,7 @@ from sklearn.metrics import confusion_matrix
 
 # Display a spinner while the download is in progress
 with st.spinner('Downloading weights file...'):
-    url = 'https://drive.google.com/file/d/1Hfm9OjinlJjgXYT_qBRZxDigEwPTdpsT/view?usp=sharing'
+    url = 'https://drive.google.com/file/d/1Hfm9OjinlJjgXYT_qBRZxDigEwPTdpsT'
     output = 'weights_folder.zip'
     gdown.download(url, output, quiet=False)
 
