@@ -75,7 +75,7 @@ I selected the following categories for my images to scrape using Selenium in Py
             \n Each of the categories contains 200 images.
             \nI decided the keep all the scraped images because I was quite satisfied with the quality of them.
 ''')
-st.image(['./resources/selenium.png'], width=100)
+st.image(['./selenium.png'], width=100)
 
 st.header("Training my own CNN on the images", divider='violet')
 st.markdown("I created a **convolutional neural network** which consists of **multitple convolutional layers** with numerous neurons which **look for features** in the images **by applying filters**. For **improving** the model I also use **augmentation** by **using zoom, tilt, flipping and cropping to create \"new\" images from existing images** so our model has more images to work with.")
