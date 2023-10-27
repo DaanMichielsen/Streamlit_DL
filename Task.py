@@ -9,7 +9,7 @@ import pickle
 import base64
 import zipfile
 import math
-import gdown
+import requests
 import tensorflow as tf
 from keras.models import load_model
 from keras import optimizers
@@ -19,9 +19,13 @@ from sklearn.metrics import confusion_matrix
 
 # Display a spinner while the download is in progress
 with st.spinner('Downloading weights file...'):
-    url = 'https://drive.google.com/file/d/1Hfm9OjinlJjgXYT_qBRZxDigEwPTdpsT'
-    output = 'weights_folder.zip'
-    gdown.download(url, output, quiet=False)
+    url = 'https://www.udrop.com/shared/846dth1dlpxf0or53320g8navp7yz_o57fiepewwr862099zmp5xz2qw_bdmaq_c870cwepa2e58t36d1ef5lql6xzfs61ivhd96-jicx4v09cez4pqcy15hvd-97e47'
+    output = 'weights.zip'
+    
+    # Download the zip file
+    response = requests.get(url)
+    with open(output, 'wb') as f:
+        f.write(response.content)
 
 # Hide the spinner once the download is complete
 st.spinner(False)
