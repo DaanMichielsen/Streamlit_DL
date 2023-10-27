@@ -9,12 +9,22 @@ import pickle
 import base64
 import zipfile
 import math
+import gdown
 import tensorflow as tf
 from keras.models import load_model
 from keras import optimizers
 import tensorflow.keras.utils as np_utils
 from keras.utils import image_dataset_from_directory
 from sklearn.metrics import confusion_matrix
+
+url = 'https://drive.google.com/drive/folders/1-KtOahPkEev5_KwNbGx8YLpjO3JRNaNU?usp=sharing'
+output = 'weights_folder.zip'
+gdown.download(url, output, quiet=False)
+
+# Extract the contents of the zip file
+with zipfile.ZipFile(output, 'r') as zip_ref:
+    zip_ref.extractall('saved_models')
+
 
 def embed_pdf(pdf_path):
     with open(pdf_path, "rb") as f:
