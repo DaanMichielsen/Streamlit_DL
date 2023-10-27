@@ -9,3 +9,4 @@ tensorflow
 keras
 git-lfs
 gdown
+requests
