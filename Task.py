@@ -24,7 +24,7 @@ def embed_pdf(pdf_path):
 
 def load_weights(epochs):
     epochs_str = "{:02d}".format(epochs)
-    model.load_weights(f'./model_checkpoints/weights_{epochs_str}.tf')
+    model.load_weights(f'./weights_{epochs_str}.tf')
 
 import os
 import zipfile
