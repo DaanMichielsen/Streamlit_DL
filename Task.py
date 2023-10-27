@@ -22,8 +22,8 @@ output = 'weights_folder.zip'
 gdown.download(url, output, quiet=False)
 
 # Extract the contents of the zip file
-with zipfile.ZipFile(output, 'r') as zip_ref:
-    zip_ref.extractall('saved_models')
+#with zipfile.ZipFile(output, 'r') as zip_ref:
+#    zip_ref.extractall('saved_models')
 
 
 def embed_pdf(pdf_path):
