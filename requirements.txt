@@ -8,3 +8,4 @@ Pillow
 tensorflow
 keras
 git-lfs
+gdown
