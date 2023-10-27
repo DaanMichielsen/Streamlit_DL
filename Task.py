@@ -17,9 +17,14 @@ import tensorflow.keras.utils as np_utils
 from keras.utils import image_dataset_from_directory
 from sklearn.metrics import confusion_matrix
 
-url = 'https://drive.google.com/file/d/1Hfm9OjinlJjgXYT_qBRZxDigEwPTdpsT/view?usp=sharing'
-output = 'weights_folder.zip'
-gdown.download(url, output, quiet=False)
+# Display a spinner while the download is in progress
+with st.spinner('Downloading weights file...'):
+    url = 'https://drive.google.com/file/d/1Hfm9OjinlJjgXYT_qBRZxDigEwPTdpsT/view?usp=sharing'
+    output = 'weights_folder.zip'
+    gdown.download(url, output, quiet=False)
+
+# Hide the spinner once the download is complete
+st.spinner(False)
 
 # Extract the contents of the zip file
 with zipfile.ZipFile(output, 'r') as zip_ref:
